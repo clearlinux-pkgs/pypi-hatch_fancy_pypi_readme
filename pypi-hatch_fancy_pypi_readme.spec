@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xAE2536227F69F181 (hs@ox.cx)
 #
 Name     : pypi-hatch_fancy_pypi_readme
-Version  : 22.7.0
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/9b/08/3c1c2f5c4839fc16cb11d7f432fd5098e0a6852e7c6ac04571dfc1fb6374/hatch_fancy_pypi_readme-22.7.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/9b/08/3c1c2f5c4839fc16cb11d7f432fd5098e0a6852e7c6ac04571dfc1fb6374/hatch_fancy_pypi_readme-22.7.0.tar.gz
-Source1  : https://files.pythonhosted.org/packages/9b/08/3c1c2f5c4839fc16cb11d7f432fd5098e0a6852e7c6ac04571dfc1fb6374/hatch_fancy_pypi_readme-22.7.0.tar.gz.asc
+Version  : 22.8.0
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz
+Source1  : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz.asc
 Summary  : Fancy PyPI READMEs with Hatch
 Group    : Development/Tools
 License  : MIT
@@ -71,10 +71,10 @@ python3 components for the pypi-hatch_fancy_pypi_readme package.
 
 
 %prep
-%setup -q -n hatch_fancy_pypi_readme-22.7.0
-cd %{_builddir}/hatch_fancy_pypi_readme-22.7.0
+%setup -q -n hatch_fancy_pypi_readme-22.8.0
+cd %{_builddir}/hatch_fancy_pypi_readme-22.8.0
 pushd ..
-cp -a hatch_fancy_pypi_readme-22.7.0 buildavx2
+cp -a hatch_fancy_pypi_readme-22.8.0 buildavx2
 popd
 
 %build
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1663179856
+export SOURCE_DATE_EPOCH=1664806856
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -94,8 +94,8 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
-export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
-export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -msse2avx "
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
@@ -107,7 +107,7 @@ popd
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-hatch_fancy_pypi_readme
-cp %{_builddir}/hatch_fancy_pypi_readme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-hatch_fancy_pypi_readme/fd5e2e6ccd11c0cf3abdefdf45b23b627d15bda6
+cp %{_builddir}/hatch_fancy_pypi_readme-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-hatch_fancy_pypi_readme/fd5e2e6ccd11c0cf3abdefdf45b23b627d15bda6 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
