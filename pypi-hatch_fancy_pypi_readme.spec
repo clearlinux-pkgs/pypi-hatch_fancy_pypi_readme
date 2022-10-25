@@ -6,7 +6,7 @@
 #
 Name     : pypi-hatch_fancy_pypi_readme
 Version  : 22.8.0
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz
 Source1  : https://files.pythonhosted.org/packages/4e/ab/9b48589d6e3a2f72cc1e8f5221c28ff28fcdf116dbbd6e9beb946054212d/hatch_fancy_pypi_readme-22.8.0.tar.gz.asc
