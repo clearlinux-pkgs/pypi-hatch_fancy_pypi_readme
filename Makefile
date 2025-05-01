@@ -1,5 +1,5 @@
 PKG_NAME := pypi-hatch_fancy_pypi_readme
-URL = https://files.pythonhosted.org/packages/b4/c2/c9094283a07dd96c5a8f7a5f1910259d40d2e29223b95dd875a6ca13b58f/hatch_fancy_pypi_readme-24.1.0.tar.gz
+URL = https://files.pythonhosted.org/packages/f3/0f/aed57c301f339936eb91cb4d8c1e5088a101081854bd3ec18a889df32365/hatch_fancy_pypi_readme-25.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
